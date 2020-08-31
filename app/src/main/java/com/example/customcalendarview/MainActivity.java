@@ -2,6 +2,7 @@ package com.example.customcalendarview;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -32,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(null);
+
+        setAdapter();
+
 
 
         final CompactCalendarView compactCalendarView = (CompactCalendarView) findViewById(R.id.compactcalendar_view);
@@ -96,5 +101,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void setAdapter() {
+        List<String> menus = new ArrayList<>();
+        for (int i =0 ; i<10; i++)  {
+            menus.add("Contoh " + i);
+        }
+        ViewPager viewPager = findViewById(R.id.viewPager);
+        viewPager.setPadding(130,0,130,0);
+        Adapter adapter = new Adapter(this,menus );
+        viewPager.setAdapter(adapter);
     }
 }

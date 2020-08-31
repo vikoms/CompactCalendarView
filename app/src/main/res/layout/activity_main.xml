@@ -29,4 +29,14 @@
         app:compactCalendarCurrentDayBackgroundColor="@color/colorPrimaryDark"
         app:compactCalendarMultiEventIndicatorColor="#fff"
         />
+
+    <androidx.viewpager.widget.ViewPager
+        android:foregroundGravity="center"
+        android:id="@+id/viewPager"
+        android:layout_centerInParent="true"
+        android:overScrollMode="never"
+        android:clipToPadding="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </androidx.viewpager.widget.ViewPager>
 </LinearLayout>
